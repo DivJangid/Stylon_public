@@ -1,1 +1,128 @@
-index
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Stylon — Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--accent:#4f46e5;--accent-light:rgba(79,70,229,0.08);--accent-mid:rgba(79,70,229,0.15);--accent-dark:rgb(39,30,189);--text:#1a1a2e;--text-secondary:#555;--bg:#fff;--bg-alt:#f7f7f5;--border:#e8e6e3;--radius:12px}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.25}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.container{max-width:860px;margin:0 auto;padding:0 24px}
+.wide-container{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+.site-nav{background:var(--bg);border-bottom:1px solid var(--border);padding:16px 0;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);background:rgba(255,255,255,0.92)}
+.site-nav .wide-container{display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:17px;color:var(--text)}
+.nav-brand img{width:36px;height:36px;border-radius:8px;object-fit:cover}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--accent);text-decoration:none}
+
+/* FOOTER */
+.site-footer{border-top:1px solid var(--border);padding:40px 0;margin-top:80px;text-align:center;color:var(--text-secondary);font-size:14px}
+.site-footer a{color:var(--text-secondary);margin:0 12px}
+.site-footer a:hover{color:var(--accent)}
+
+@media(max-width:640px){
+  .nav-links{gap:16px}
+  .nav-links a{font-size:13px}
+}
+</style>
+<style>
+.hero{padding:100px 0 80px;text-align:center;background:linear-gradient(160deg,var(--accent-light) 0%,var(--bg) 50%,rgba(79,70,229,0.04) 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-120px;right:-120px;width:400px;height:400px;background:rgba(79,70,229,0.06);border-radius:50%;filter:blur(80px)}
+.hero-icon{width:100px;height:100px;border-radius:24px;object-fit:cover;box-shadow:0 8px 32px rgba(79,70,229,0.2);margin-bottom:28px}
+.hero-icon-placeholder{width:100px;height:100px;border-radius:24px;background:var(--accent);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:42px;font-weight:700;margin-bottom:28px;box-shadow:0 8px 32px rgba(79,70,229,0.25)}
+.hero h1{font-size:clamp(36px,5vw,56px);margin-bottom:16px;letter-spacing:-1px}
+.hero p.tagline{font-size:20px;color:var(--text-secondary);max-width:560px;margin:0 auto 36px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-weight:600;font-size:15px;transition:all .25s;text-decoration:none!important}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 4px 16px rgba(79,70,229,0.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(79,70,229,0.4)}
+.btn-outline{border:2px solid var(--border);color:var(--text);background:var(--bg)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.btn-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.store-badge{display:inline-flex;align-items:center;gap:10px;padding:12px 24px 12px 18px;border-radius:12px;background:#000;color:#fff;text-decoration:none!important;transition:all .25s;border:1.5px solid #333}
+.store-badge:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,0.25);border-color:#555}
+.store-badge svg{flex-shrink:0}
+.store-badge .store-text{display:flex;flex-direction:column;line-height:1.2}
+.store-badge .store-text .store-label{font-size:10px;font-weight:400;opacity:0.85}
+.store-badge .store-text .store-name{font-size:16px;font-weight:600;letter-spacing:-0.2px}
+.about-section{padding:80px 0}
+.about-section p{font-size:18px;color:var(--text-secondary);max-width:680px;margin:0 auto;text-align:center;line-height:1.85}
+.features-section{padding:80px 0;background:var(--bg-alt)}
+.section-title{text-align:center;font-size:clamp(28px,4vw,40px);margin-bottom:12px;letter-spacing:-0.5px}
+.section-sub{text-align:center;color:var(--text-secondary);margin-bottom:56px;font-size:16px}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.feature-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;transition:all .3s}
+.feature-card:hover{border-color:var(--accent);box-shadow:0 4px 20px rgba(79,70,229,0.08);transform:translateY(-3px)}
+.feature-emoji{font-size:32px;margin-bottom:16px;display:block}
+.feature-card h3{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:700;margin-bottom:8px}
+.feature-card p{color:var(--text-secondary);font-size:14px;line-height:1.7}
+.cta-section{padding:100px 0;text-align:center}
+.cta-section h2{margin-bottom:16px}
+.cta-section p{color:var(--text-secondary);margin-bottom:36px;font-size:17px}
+@media(max-width:640px){.hero{padding:64px 0 48px}.features-grid{grid-template-columns:1fr}}
+</style>
+</head><body>
+<nav class="site-nav"><div class="wide-container">
+  <a href="index.html" class="nav-brand" style="text-decoration:none"><img src="https://divjangid.github.io/Stylon_public/icon.png" alt="Stylon"/><span>Stylon</span></a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="privacy-policy.html" class="">Privacy Policy</a>
+    <a href="data-deletion.html" class="">Data Deletion</a>
+    <a href="terms-of-service.html" class="">Terms</a>
+    <a href="support.html" class="">Support</a>
+  </div>
+</div></nav>
+
+<section class="hero"><div class="container">
+<img src="https://divjangid.github.io/Stylon_public/icon.png" alt="Stylon" class="hero-icon"/>
+<h1>Stylon</h1>
+<p class="tagline">A brief tagline about your app</p>
+
+</div></section>
+
+<section class="about-section"><div class="container">
+<p>Your AI-powered personal stylist is here! Snap your clothes, get daily outfit ideas, and see how they look on you with virtual try-on. 4 free credits every week!</p>
+</div></section>
+
+<section class="features-section"><div class="wide-container">
+<h2 class="section-title">Features</h2>
+<p class="section-sub">Everything you need, nothing you don't.</p>
+<div class="features-grid">
+<div class="feature-card">
+<span class="feature-emoji">✨</span>
+<h3>SNAP & ORGANIZE YOUR WARDROBE</h3>
+<p>Take a photo of any clothing item, and our AI instantly detects the category, color, pattern, material, and style. Build your digital closet in minutes with bulk upload — add up to 20 items at once.</p>
+</div>
+<div class="feature-card">
+<span class="feature-emoji">✦</span>
+<h3>GET DAILY OUTFIT IDEAS</h3>
+<p>Stylon generates fresh outfit combinations from your actual clothes every day. Our smart algorithm learns your style preferences and avoids repeating the same looks. Favorite the outfits you love, dismiss the ones you don't.</p>
+</div>
+<div class="feature-card">
+<span class="feature-emoji">✦</span>
+<h3>VIRTUAL TRY-ON</h3>
+<p>See exactly how an outfit looks on your body before you put it on. Upload a full-body photo once, and Stylon creates realistic try-on previews for any outfit combination — tops, bottoms, dresses, and outerwear.</p>
+</div>
+<div class="feature-card">
+<span class="feature-emoji">✦</span>
+<h3>PERSONALIZED TO YOUR STYLE</h3>
+<p>ake a quick style quiz to tell Stylon your dress code, aesthetic preferences, favorite color palettes, and styling goals. Every outfit suggestion is tailored to you — whether you're minimalist, streetwear, classic, or smart casual.</p>
+</div>
+</div>
+</div></section>
+
+
+
+<footer class="site-footer"><div class="container">
+  <p style="margin-bottom:12px">&copy; 2026 Divyanshu J. All rights reserved.</p>
+  <div><a href="index.html">Home</a><a href="privacy-policy.html">Privacy</a><a href="data-deletion.html">Data Deletion</a><a href="terms-of-service.html">Terms</a><a href="support.html">Support</a><a href="mailto:idivyanshu36@gmail.com">Contact</a></div>
+</div></footer>
+</body></html>
